@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="com.example.besttodo.todoscreen.fragments.RootFragment"
+        android:label="fragment_root"
+        tools:layout="@layout/fragment_root" >
+        <action
+            android:id="@+id/action_rootFragment_to_adSheetFragment"
+            app:destination="@id/adSheetFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_clickerSheetFragment"
+            app:destination="@id/clickerSheetFragment" />
+        <action
+            android:id="@+id/action_rootFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="todoValue"
+            app:argType="com.example.besttodo.todoscreen.model.TodoItem" />
+        <action
+            android:id="@+id/action_rootFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.besttodo.todoscreen.fragments.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <dialog
+        android:id="@+id/adSheetFragment"
+        android:name="com.example.besttodo.todoscreen.fragments.AdSheetFragment"
+        android:label="fragment_ad_sheet"
+        tools:layout="@layout/fragment_ad_sheet" >
+        <action
+            android:id="@+id/action_adSheetFragment_to_rootFragment"
+            app:destination="@id/rootFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/clickerSheetFragment"
+        android:name="com.example.besttodo.todoscreen.fragments.ClickerSheetFragment"
+        android:label="fragment_clicker_sheet"
+        tools:layout="@layout/fragment_clicker_sheet" >
+        <argument
+            android:name="todoValue"
+            app:argType="com.example.besttodo.todoscreen.model.TodoItem" />
+        <action
+            android:id="@+id/action_clickerSheetFragment_to_completedFragment"
+            app:destination="@id/completedFragment" />
+        <action
+            android:id="@+id/action_clickerSheetFragment_to_rootFragment"
+            app:destination="@id/rootFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/completedFragment"
+        android:name="com.example.besttodo.todoscreen.fragments.CompletedFragment"
+        android:label="CompletedFragment" >
+        <action
+            android:id="@+id/action_completedFragment_to_clickerSheetFragment"
+            app:destination="@id/clickerSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.besttodo.todoscreen.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_rootFragment"
+            app:destination="@id/rootFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.besttodo.todoscreen.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rootFragment"
+            app:destination="@id/rootFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_exchangeFragment"
+            app:destination="@id/exchangeFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_fireBaseFragment"
+            app:destination="@id/fireBaseFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_fireRootFragment"
+            app:destination="@id/fireRootFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exchangeFragment"
+        android:name="com.example.besttodo.exchangescreen.ExchangeFragment"
+        android:label="fragment_exchange"
+        tools:layout="@layout/fragment_exchange" >
+        <action
+            android:id="@+id/action_exchangeFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fireBaseFragment"
+        android:name="com.example.besttodo.firebasescreen.fragments.FireBaseFragment"
+        android:label="fragment_fire_base"
+        tools:layout="@layout/fragment_fire_base" >
+        <action
+            android:id="@+id/action_fireBaseFragment_to_fireVideoFragment"
+            app:destination="@id/fireVideoFragment" />
+        <argument
+            android:name="currentVideo"
+            app:argType="com.example.besttodo.firebasescreen.model.FireBase" />
+        <action
+            android:id="@+id/action_fireBaseFragment_to_fireAddFragment"
+            app:destination="@id/fireAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.besttodo.homeweather.WeatherFragment"
+        android:label="WeatherFragment" >
+        <action
+            android:id="@+id/action_weatherFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fireVideoFragment"
+        android:name="com.example.besttodo.firebasescreen.fragments.FireVideoFragment"
+        android:label="fragment_fire_video"
+        tools:layout="@layout/fragment_fire_video" >
+        <action
+            android:id="@+id/action_fireVideoFragment_to_fireBaseFragment"
+            app:destination="@id/fireBaseFragment" />
+        <argument
+            android:name="currentVideo"
+            app:argType="com.example.besttodo.firebasescreen.model.FireBase" />
+        <action
+            android:id="@+id/action_fireVideoFragment_to_fireAddFragment"
+            app:destination="@id/fireAddFragment" />
+        <action
+            android:id="@+id/action_fireVideoFragment_to_fireRootFragment"
+            app:destination="@id/fireRootFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/fireAddFragment"
+        android:name="com.example.besttodo.firebasescreen.fragments.FireAddFragment"
+        android:label="fragment_fire_add"
+        tools:layout="@layout/fragment_fire_add" >
+        <action
+            android:id="@+id/action_fireAddFragment_to_fireVideoFragment"
+            app:destination="@id/fireVideoFragment" />
+        <action
+            android:id="@+id/action_fireAddFragment_to_fireRootFragment"
+            app:destination="@id/fireRootFragment" />
+        <argument
+            android:name="videoName"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/fireRootFragment"
+        android:name="com.example.besttodo.firebasescreen.fragments.FireRootFragment"
+        android:label="fragment_fire_root"
+        tools:layout="@layout/fragment_fire_root" >
+        <action
+            android:id="@+id/action_fireRootFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_fireRootFragment_to_fireVideoFragment"
+            app:destination="@id/fireVideoFragment" />
+        <action
+            android:id="@+id/action_fireRootFragment_to_fireAddFragment"
+            app:destination="@id/fireAddFragment" />
+        <argument
+            android:name="currentValue"
+            app:argType="com.example.besttodo.firebasescreen.model.FireBase" />
+    </fragment>
+</navigation>
